@@ -1,6 +1,6 @@
-// The next program demon strates basic usage of Go’s stand ard image packages, which we’ll use
-// to cre ate a sequence of bit-mapped images and then encode the sequence as a GIF animat ion.
-// The images, cal le d Li ssajous figure s, were a staple visual effec t in sci-fi films of the 1960s.
+// Mo dif y the Lissajous program to pro duce images in multiple color s by adding
+// more values to palette and then displ aying them by chang ing the third argument of Set-
+// ColorIndex in som e interest ing way.
 
 package main
 

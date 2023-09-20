@@ -1,6 +1,7 @@
-// The next program demon strates basic usage of Go’s stand ard image packages, which we’ll use
-// to cre ate a sequence of bit-mapped images and then encode the sequence as a GIF animat ion.
-// The images, cal le d Li ssajous figure s, were a staple visual effec t in sci-fi films of the 1960s.
+// Change the Lissajous program’s color palette to gre en on black, for adde d
+// authenticity. To cre ate the web color #RRGGBB , use color.RGBA{0xRR, 0xGG, 0xBB, 0xff} ,
+// where each pair of hexade cimal digits represents the int ensit y of the red, gre en, or blue com-
+// ponent of the pixel.
 
 package main
 
