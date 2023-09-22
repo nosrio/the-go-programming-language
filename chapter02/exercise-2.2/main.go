@@ -75,6 +75,30 @@ func (t Temperature) Fahrenheit() float64 {
 	return ( t.Celsius() * 9 / 5) + 32
 }
 
+type Weight struct {
+	kilograms float64
+}
+
+func FromKilograms(f float64) Weight {
+	return Weight{f}
+}
+
+func FromPounds(f float64) Weight {
+	return Weight{f * 2.205	}
+}
+
+func (w Weight) String() string {
+	return fmt.Sprintf("%.3gkg = %.3g£", w.Kilograms(), w.Pounds())
+}
+
+func (w Weight) Kilograms() float64 {
+	return w.kilograms
+}
+
+func (w Weight) Pounds() float64 {
+	return w.kilograms / 2.205
+}
+
 func convert(f float64, unit string) (Measurement, error) {
 	unit = strings.ToLower(unit)
 	switch unit {
@@ -88,6 +112,10 @@ func convert(f float64, unit string) (Measurement, error) {
 		return FromFarenheit(f), nil
 	case "k":
 		return FromKelvin(f), nil
+	case "kg":
+		return FromKilograms(f), nil
+	case "£":
+		return FromPounds(f), nil
 	default:
 		return nil, fmt.Errorf("unexpected unit %v", unit)
 	}
